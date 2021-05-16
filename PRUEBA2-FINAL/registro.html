@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/904d8a885a.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link type="text/css" href="css/estilos.css" rel="stylesheet">
+</head>
+
+<body> 
+    <img class="background"  src="img/Portada-chile.jpg"/>
+    
+	<div class="d-flex formulario" id="wrapper">
+		
+
+
+
+		<!--botones ingresar y registro -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom fixed-top">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active box-3">
+                  <a href="index.html"> <button type="button" class="btn btn-warning">
+                      Inicio </button> </a>
+                  <button type="button" class="mr-sm-2 btn btn-info" data-toggle="modal"
+                    data-target="#modal_login">Login</button>
+              </ul>
+            </div>
+          </nav>
+
+        <section id="body" style="padding: 100px;"> 
+			<!-- informacion pagina-->
+			<div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    
+                          <div >
+                            <h5 class="display-4">Registro de usuario</h5>
+                            <p> El registro de usuario no es el proceso de contratación del producto. Si no es cliente actual, una vez registrado se permitirá el acceso de manera limitada al Portal, donde se podrá solicitar la tarjeta y ver el estado del pedido.</p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">RUT</label>
+                                    <input type="text" class="form-control" id="txt_rut" placeholder="11.111.111-1">
+    
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Nombre</label>
+                                    <input type="text" class="form-control" id="txt_nombre" >
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput2">Apellido Paterno</label>
+                                  <input type="text" class="form-control" id="txt_appaterno">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput3">Apellido Materno</label>
+                                        <input type="text" class="form-control" id="txt_apmaterno">
+                                      </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput4">Correo Electronico</label>
+                                        <input type="text" class="form-control" id="txt_mail" placeholder="nombre@ejemplo.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Tipo de cuenta</label>
+                                  <select class="form-control" id="cmb_tipocuenta">
+                                    <option value="0">Elegir...</option>
+                                    <option value="1">Debito</option>
+                                    <option value="2">Credito</option>
+                                    <option value="3">Corriente</option>
+                                  </select>
+                                </div>
+
+                                <strong>
+                                  <ul id="errores" style="color: red;">
+    
+                                  </ul>
+                                </strong>
+
+                                <button type="button" class="mr-sm-2 btn btn-info" style="margin-top:10px; display: inline" id="btn_limpiar">Limpiar</button>
+                                <button type="button" class="mr-sm-2 btn btn-info" style="margin-top:10px; display: inline" id="btn_registro">Registrarme</button>
+                                
+                              </form>	
+                          </div>
+                        <br />
+                </div>
+            <div>
+        </section>
+
+
+        <div class="modal" id="modal_login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog ">
+            <div class="modal-content ">
+              <div class="modal-header bg-light">
+                <h4 class="modal-title"  text-decoration="underline:none">Inicio de sesión</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body bg-light">
+                <form>
+                  <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" class="form-control" id="txt_usuario">
+                  </div>
+                  <div class="form-group">
+                    <label class="letra-negra">Contraseña</label>
+                    <input type="password" class="form-control" id="txt_clave">
+                  </div>
+                  <ul id ="mensajesLogin"></ul>
+                </form>
+                
+              <div>
+                <a style="text-decoration:none!important;">
+                  <button type="button" id="btn_ingresar" class="btn btn-block btn-three btn-lg " style="background-color: rgb(4, 160, 172); color:white;"> Ingresar </button> </a>
+               </div>
+            </div>
+        </div>
+    </div>
+  </div>
+	
+    </div>   
+		<!-- Core theme JS-->
+		<script src="js/funciones.js"></script>
+</body>
+
+</html>
